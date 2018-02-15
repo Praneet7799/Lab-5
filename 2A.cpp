@@ -4,16 +4,16 @@ using namespace std;
 #define MAX 1000 //The max no of elements in the array
 
 
-void quicksort(int a[], int left, int right)
+void quicksort(int arr[], int left, int right)
    {
    	int i = left, j = right-1;//The left end and right end of the elements
             int tmp;
-            int pivot = a[(left + right) / 2];//pivot point set as middle element
-            while (i <= j) 
+            int pivot = arr[(left + right) / 2];//pivot point set as middle element
+            while (i <= j)
             {
-                   while (a[i] < pivot)
+                   while (arr[i] < pivot)
                    i++;                   // skipping the elemnts from left till a[i]<pivot
-                   while (a[j] > pivot)
+                   while (arr[j] > pivot)
                    j--;                   // skipping the elemnts from right till a[j]>pivot
                    if (i <= j)            //if athe conditions fail then they are swapped
                    {
@@ -24,10 +24,10 @@ void quicksort(int a[], int left, int right)
                            j--;
                     }
        }
-       if (left < j)              
-            quickSort(arr, left, j); 
+       if (left < j)
+            quicksort(arr, left, j);
       if (i < right)
-            quickSort(arr, i, right);
+            quicksort(arr, i, right);
 }
 
 int main() {
@@ -41,17 +41,17 @@ int main() {
 	cout<<"\n The original array :\n";
 	for(int i=0;i<c;i++)
 	{
-		cout<<arr[k]<<"-->";
+		cout<<arr[i]<<"-->";
 	}
 	cout<<"END\n";
-	quickSort(arr,0,c);
-	
+	quicksort(arr,0,c);
+
 	cout<<"\n The sorted array :\n";
 	for(int i=0;i<c;i++)
 	{
-		cout<<arr[k]<<"-->";
+		cout<<arr[i]<<"-->";
 	}
 	cout<<"END\n";
-		
+
 	return 0;
 }
