@@ -23,8 +23,8 @@ void quicksort(int a[], int left, int right)
                            i++;
                            j--;
                     }
-       };
-       if (left < j)              s
+       }
+       if (left < j)              
             quickSort(arr, left, j); 
       if (i < right)
             quickSort(arr, i, right);
