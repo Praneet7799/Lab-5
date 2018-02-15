@@ -41,7 +41,7 @@ int main() {
 	cout<<"\n The original array :\n";
 	for(int i=0;i<n;i++)
 	{
-		cout<<arr[k]<<"-->";
+		cout<<arr[i]<<"-->";
 	}
 	cout<<"END\n";
 	bubblesort(arr,n);
@@ -49,7 +49,7 @@ int main() {
 	cout<<"\n The sorted array :\n";
 	for(int i=0;i<n;i++)
 	{
-		cout<<arr[k]<<"-->";
+		cout<<arr[i]<<"-->";
 	}
 	cout<<"END\n";
 		
