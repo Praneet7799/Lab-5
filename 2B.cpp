@@ -32,14 +32,22 @@ class LinkedList {
 	void deleteAt(int i);
 	void display();
 	int countElements();
+	Node *move(int c)
+	{
+		Node *tmp=new Node;
+		tmp=head;
+		for(int i=1;i<c;i++)
+		tmp=tmp->next;
+		return tmp;
+	}
    void quicksort(int left, int right)
    {
    	int i = left, j = right;//The left end and right end of the elements
-            node *tmp=new node;
-            node *pivot=new node;
-            
+            Node *tmp=new Node;
+            Node *pivot=new Node;
+
             pivot=move((left+right)/2);//pivot point set as middle node
-            while (i <= j) 
+            while (i <= j)
             {
                    while (move(i)->data < pivot->data)
                    i++;                   // skipping the elemnts from left till move(i)->data < pivot->data
@@ -55,7 +63,7 @@ class LinkedList {
                     }
        };
        if (left < j)                 // Doing this recursively  for the partitions made by the middle elemnts
-            quicksort(left, j); 
+            quicksort(left, j);
       if (i < right)
             quicksort( i, right);
 }
@@ -80,37 +88,37 @@ void LinkedList::insert(int x) {
 	++n;
 }
 
-void LinkedList::insertAt(int i, int x) 
+void LinkedList::insertAt(int i, int x)
 { //checks if the number of elements in the list are enough to insert at position i
-if (i > n) 
+if (i > n)
  {cout << "Linked List does not have that many elements \n";
 	}
 	//adds the element to the start,assigns the next of temp to the first element and changes the head to point at the new start
-else if (i == 0) 
+else if (i == 0)
  {Node* temp = new Node;
 	temp->data = x;
 	temp->next = head;
 	head = temp;
 	++n;
-	} 
-else if (i == n) 
+	}
+else if (i == n)
  {//adds the node at the end of the list, identical to insert function
- 
+
  Node* temp = new Node;
 	temp->data = x;
 	temp->next = NULL;
 
-	if (head == NULL) 
+	if (head == NULL)
  {head = temp;
-	} 
- else 
+	}
+ else
  { tail->next = temp;
  }
 	tail = temp;
 	++n;
-	
+
  }
- else 
+ else
  {
 	Node* temp = new Node;
 	temp->data = x;
@@ -120,7 +128,7 @@ else if (i == n)
 	for (int j=0; j<i-1; ++j) {
 	locate = locate->next;
 	}
- //the new node points to the node which the (i-1)th node was pointing to, which in turn points to the new node 
+ //the new node points to the node which the (i-1)th node was pointing to, which in turn points to the new node
 	temp->next = locate->next;
 	locate->next = temp;
 	//increases the elements by one, as the node is successfully added
@@ -174,6 +182,7 @@ void LinkedList::display() {
 	} else {
 	Node* temp = new Node;
 	temp = head;
+	cout<<endl;
 	//temp pointer transverses through the list printing all elements
 	while (temp != NULL) {
 	cout << temp->data << endl;
@@ -186,8 +195,8 @@ int LinkedList::countElements()
 {int j;
 j=n;
 	return j;}
-	
-   
+
+
 
 
 int main() {
