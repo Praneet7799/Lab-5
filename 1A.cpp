@@ -7,23 +7,19 @@ using namespace std;
 void bubblesort(int a[], int b)
 {
 	
-	int p,q,t;
+	int t;
 	for(int i=0;i<b;i++)
 	{
-		p=0;
-		q=1;
 	for(int j=0;j<b-1;j++)
 	{
-		if(a[p]>a[q])                         
+		if(a[j]>a[j+1])                         
     //Comparing the adjacent two elemnts of the array
 		{                                    
     //Swapping them in ascending order
-			t=a[p];                
-			a[p]=a[q];             
-			a[q]=t;
+			t=a[j];                
+			a[j]=a[j+1];             
+			a[j+1]=t;
 		}
-		p++;
-		q++;
 	}
 	}
 
